@@ -2,9 +2,28 @@
 <html>
    <head>
         <meta charset="utf-8">
-        <title>심플포트폴리오</title>        
+        <link href="css/reset.css" rel="stylesheet"/>
+        <link href="css/style.css" rel="stylesheet"/>
+        <script src="js/jquery.1.12.4.js" type="text/javascript"></script>
+        <script src="plugins/bxslider/js/jquery.bxslider.js" type="text/javascript" ></script>
+        <link href="plugins/web-fonts-with-css/css/all.css" rel="stylesheet" />
+        <script>
+            $(document).ready(function(){
+                $('.slider'). bxSlider({
+                    controls: false,
+                    parger:false,
+                    auto:true,
+                });
+            });
+        </script>
+        <title>예제 직접 해보기</title>        
     </head>
-    <body>
 
+    <body>
+        <div class="slider">
+            <div class="background_1"></div>
+            <div class="background_2"></div>
+            <div class="background_3"></div>
+        </div>
     </body>
 </html>
