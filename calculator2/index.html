@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버튼으로 만드는 계산기!</title>
+    <link href="style.css" rel="styleSheet"/>
+</head>
+<body>
+    <div class="calculator">
+        <input class="display" type="text">
+        <div class="buttons">
+            <button onclick="displayValue('AC')">AC</button>
+            <button onclick="calculate()">=</button>
+
+            <button onclick="displayValue('7')">7</button>
+            <button onclick="displayValue('8')">8</button>
+            <button onclick="displayValue('9')">9</button>
+            <button onclick="displayValue('/')">/</button>
+
+            <button onclick="displayValue('4')">4</button>
+            <button onclick="displayValue('5')">5</button>
+            <button onclick="displayValue('6')">6</button>
+            <button onclick="displayValue('*')">X</button>
+
+            <button onclick="displayValue('1')">1</button>
+            <button onclick="displayValue('2')">2</button>
+            <button onclick="displayValue('3')">3</button>
+            <button onclick="displayValue('-')">-</button>
+
+            <button onclick="displayValue('0')">0</button>
+            <button onclick="displayValue('.')">.</button>
+            <button onclick="displayValue('+')">+</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
