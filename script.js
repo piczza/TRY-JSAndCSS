@@ -11,16 +11,16 @@ let tempMovingItem;
 const BLOCKS = {
     tree: [
         [[2,1],[0,1],[1,0],[1,1]],
-        [],
-        [],
-        [],
+        [[1,2],[0,1],[1,0],[1,1]],
+        [[1,2],[0,1],[2,1],[1,1]],
+        [[2,1],[1,2],[1,0],[1,1]],
     ]
 }
 const movingItem = {
     type:"tree",
-    direction: 0,
+    direction: 1,
     top: 0,
-    left: 3,
+    left: 0,
 };
 
 init();
@@ -52,12 +52,40 @@ function renderBlocks(){
     BLOCKS[type][direction].forEach(block => {
         const x = block[0] + left;
         const y = block[1] + top;
-        const target = playground.childNodes[y].childNodes[0].childNodes[x];
-        target.classList.add(type, "moving");
+        const target = playground.childNodes[y] ? playground.childNodes[y].childNodes[0].childNodes[x] : null;
+        const isAvailable = checkEmpty(target);
+        if(isAvailable){
+            target.classList.add(type, "moving");
+        }else{
+            tempMovingItem = {...movingItem};
+            setTimeout(()=>{
+                renderBlocks();
+                if(moveType === "top"){
+                    seizeBlock();
+                }
+            },0)
+        }
     });
+    movingItem.left=left;
+    movingItem.top=top;
+    movingItem.direction=direction;
+}
+function seizeBlock(){
+
+}
+function  checkEmpty(target){
+    if(!target){
+        return false;
+    }
+    return true;
 }
 function moveBlock(moveType, amount){
     tempMovingItem[moveType] += amount;
+    renderBlocks();
+}
+function changeDirection(){
+    const direction = tempMovingItem.direction;
+    direction === 3 ? tempMovingItem.direction = 0 : tempMovingItem.direction += 1;
     renderBlocks();
 }
 
@@ -72,6 +100,9 @@ document.addEventListener("keydown", e=>{
             break;
         case 40:
             moveBlock("top", 1);
+            break;
+        case 38:
+            changeDirection();
             break;
         default:
             break;
