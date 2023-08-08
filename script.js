@@ -43,13 +43,13 @@ function prependNewLine(){
     li.prepend(ul);
     playground.prepend(li);
 }
-function renderBlocks(){
+function renderBlocks(moveType=""){
     const {type, direction, top, left} = tempMovingItem;
     const movingBlocks = document.querySelectorAll(".moving");
     movingBlocks.forEach(moving=>{
         moving.classList.remove(type, "moving");
     })
-    BLOCKS[type][direction].forEach(block => {
+    BLOCKS[type][direction].some(block => {
         const x = block[0] + left;
         const y = block[1] + top;
         const target = playground.childNodes[y] ? playground.childNodes[y].childNodes[0].childNodes[x] : null;
@@ -64,6 +64,7 @@ function renderBlocks(){
                     seizeBlock();
                 }
             },0)
+            return true;
         }
     });
     movingItem.left=left;
@@ -71,17 +72,21 @@ function renderBlocks(){
     movingItem.direction=direction;
 }
 function seizeBlock(){
-
+    const movingBlocks = document.querySelectorAll(".moving");
+    movingBlocks.forEach(moving=>{
+        moving.classList.remove("moving");
+        moving.classList.add("seized");
+    })
 }
 function  checkEmpty(target){
-    if(!target){
+    if(!target || target.classList.contains("seized")){
         return false;
     }
     return true;
 }
 function moveBlock(moveType, amount){
     tempMovingItem[moveType] += amount;
-    renderBlocks();
+    renderBlocks(moveType);
 }
 function changeDirection(){
     const direction = tempMovingItem.direction;
@@ -107,5 +112,4 @@ document.addEventListener("keydown", e=>{
         default:
             break;
     }
-    console.log(e)
 });
