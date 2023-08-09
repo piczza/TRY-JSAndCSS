@@ -32,5 +32,20 @@ body{
     outline: 0.5px solid rgb(201, 201, 201);
 }
 .tree{
-    background: black;
+    background: skyblue;
+}
+.square{
+    background: rgb(185, 212, 126);
+}
+.bar{
+    background: rgb(235, 135, 218);
+}
+.zee{
+    background: rgb(153, 135, 235);
+}
+.elLeft{
+    background: rgb(235, 150, 135);
+}
+.elRight{
+    background: rgb(235, 212, 135);
 }

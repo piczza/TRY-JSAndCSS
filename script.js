@@ -1,3 +1,5 @@
+import BLOCKS from "./blocks.js";
+
 //화면
 const playground = document.querySelector(".playground > ul");
 //세팅
@@ -8,17 +10,10 @@ let score = 0;
 let duration = 500;
 let downInterval;
 let tempMovingItem;
-const BLOCKS = {
-    tree: [
-        [[2,1],[0,1],[1,0],[1,1]],
-        [[1,2],[0,1],[1,0],[1,1]],
-        [[1,2],[0,1],[2,1],[1,1]],
-        [[2,1],[1,2],[1,0],[1,1]],
-    ]
-}
+
 const movingItem = {
-    type:"tree",
-    direction: 1,
+    type:"elLeft",
+    direction: 0,
     top: 0,
     left: 0,
 };
@@ -28,7 +23,7 @@ init();
 //함수들
 function init(){//시작하면 호출되는 함수 
     tempMovingItem = {...movingItem};
-    for(let i=0; i<20; i++){
+    for(let i=0; i<GAME_ROWS; i++){
         prependNewLine();
     }
     renderBlocks();
@@ -48,7 +43,7 @@ function renderBlocks(moveType=""){
     const movingBlocks = document.querySelectorAll(".moving");
     movingBlocks.forEach(moving=>{
         moving.classList.remove(type, "moving");
-    })
+    });
     BLOCKS[type][direction].some(block => {
         const x = block[0] + left;
         const y = block[1] + top;
@@ -56,6 +51,7 @@ function renderBlocks(moveType=""){
         const isAvailable = checkEmpty(target);
         if(isAvailable){
             target.classList.add(type, "moving");
+            console.log(movingItem.direction);
         }else{
             tempMovingItem = {...movingItem};
             setTimeout(()=>{
@@ -77,6 +73,17 @@ function seizeBlock(){
         moving.classList.remove("moving");
         moving.classList.add("seized");
     })
+    generateNewBlock();
+}
+function generateNewBlock(){
+    const blockArray = Object.entries(BLOCKS);
+    const randomIndex = Math.floor(Math.random() * blockArray.length);
+    movingItem.type = blockArray[randomIndex][0];
+    movingItem.top=0;
+    movingItem.left=3;
+    movingItem.direction =0;
+    tempMovingItem = {...movingItem};
+    renderBlocks();
 }
 function  checkEmpty(target){
     if(!target || target.classList.contains("seized")){
