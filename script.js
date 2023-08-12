@@ -12,7 +12,7 @@ let downInterval;
 let tempMovingItem;
 
 const movingItem = {
-    type:"elLeft",
+    type:"",
     direction: 0,
     top: 0,
     left: 0,
@@ -26,7 +26,7 @@ function init(){//시작하면 호출되는 함수
     for(let i=0; i<GAME_ROWS; i++){
         prependNewLine();
     }
-    renderBlocks();
+    generateNewBlock();
 }
 function prependNewLine(){
     const li = document.createElement("li");
@@ -76,6 +76,11 @@ function seizeBlock(){
     generateNewBlock();
 }
 function generateNewBlock(){
+    clearInterval(downInterval);
+    downInterval = setInterval(() => {
+        moveBlock('top',1);
+    }, duration)
+
     const blockArray = Object.entries(BLOCKS);
     const randomIndex = Math.floor(Math.random() * blockArray.length);
     movingItem.type = blockArray[randomIndex][0];
