@@ -13,9 +13,27 @@
     <!-- 위에 메뉴바 -->
     <header class="header">
         <nav class="header__content">
-            <!-- 로고 -->
             <div class="header__logo">
+                <!-- 로고 -->
                 <img class="logo" src="assets/Netflix-logo.png" alt="Netflix">
+                <!-- 메뉴바 -->
+                <nav class="header__menu header__menu-unfold">
+                    <div>홈</div>
+                    <div>시리즈</div>
+                    <div>영화</div>
+                    <div>내가 찜한 리스트</div>
+                </nav>
+                <nav class="header__menu header__menu-fold">
+                    <div>메뉴</div>
+                    <img class="header__menu__menu-fold__button" src="assets/triangle.svg" alt="">
+                    <!-- 드랍다운메뉴 -->
+                    <div class="header__menu__menu-fold__button__button">
+                        <button>홈</button>
+                        <button>시리즈</button>
+                        <button>영화</button>
+                        <button>내가 찜한 리스트</button>
+                    </div>
+                </nav>
             </div>
             <!-- 프로필 -->
             <div class="header__profile">

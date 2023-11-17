@@ -72,8 +72,8 @@
     display: flex;
     flex-flow: row nowrap;
     column-gap: 5px;
-    /* scroll-snap-type: x mandatory; */
-    /* overflow-x: scroll; */
+    /* scroll-snap-type: x mandatory;
+    overflow-x: scroll; */
 }
 
 /* 스크롤바 숨기기 */
@@ -91,20 +91,4 @@
 .movies img:hover{
     transform: scale(2);
     cursor: pointer;
-}
-
-@media (max-width: 500px){
-    .movies img{
-        width: 200px;
-    }
-}
-@media (min-width: 501px) and (max-width: 999px){
-    .movies img{
-        width: 300px;
-    }
-}
-@media (min-width: 1000px){
-    .movies img{
-        width: 400px;
-    }
 }
