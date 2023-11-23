@@ -1,0 +1,32 @@
+#header{
+    width: 100%;
+    background-color: lightcoral;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header #header__title{
+    padding-left: 5%;
+    color: white;
+}
+#header button{
+    padding-right: 5%;
+    background: none;
+    border: 0px;
+    color: white;
+    text-decoration: underline;
+}
+
+/* 호버시 */
+#header__title:hover{
+    cursor: pointer;
+}
+button:hover{
+    cursor: pointer;
+}
