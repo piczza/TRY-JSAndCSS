@@ -1,0 +1,119 @@
+body {
+  position: relative;
+}
+
+input {
+  width: 80%;
+  height: 30px;
+  color: white;
+  background-color: black !important;
+  border: 2px solid black !important;
+  border-radius: 12px;
+  outline: none;
+  font-size: 17px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+input:focus {
+  width: 95%;
+  box-shadow: 0 0 5px 0px black;
+  transition: all 0.3s;
+}
+
+.login_space {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 200px;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 0 20px 5px black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 80%);
+}
+
+.login_space_inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  height: 80%;
+  color: black;
+}
+
+.login_id_container,
+.login_pw_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.login_pw_container {
+  margin-top: 5px;
+}
+
+.login_btn_space {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login_submit_btn {
+  width: 100%;
+  height: 30px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 15px;
+  background-color: black;
+  color: white;
+  transition: all 0.3s;
+}
+
+.login_submit_btn:hover,
+.login_submit_btn:focus {
+  height: 37px;
+  box-shadow: 0 0 5px 0px black;
+  font-weight: bold;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.signup_container {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 930%);
+  box-sizing: border-box;
+  width: 600px;
+  height: 40px;
+  border-radius: 12px;
+  padding: 0 10px;
+  background-color: white;
+  color: black;
+  font-size: 13px;
+}
+
+.signup_btn {
+  width: 100px;
+  height: 22px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.signup_btn:hover {
+  width: 222px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
