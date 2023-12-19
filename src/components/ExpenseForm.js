@@ -1,7 +1,7 @@
 import React from 'react'
 import { MdSend } from 'react-icons/md';
 import "./ExpenseForm.css";
-
+//상단 입력폼 값 받아서 실제 요소 생성
 const ExpenseForm = ({ handleCharge, charge, edit, amount, handleAmount, handleSubmit }) => {
     return (
         <form onSubmit={handleSubmit}>

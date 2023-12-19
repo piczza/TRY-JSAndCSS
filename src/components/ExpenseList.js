@@ -8,6 +8,7 @@ const ExpenseList = ({ handleDelete, expenses, handleEdit, clearItems }) => {
             <ul className='list'>
                 {/* Expense Item */}
                 {expenses.map(expense => {
+                    //ExpenseItem 가져와서 값 넣고 요소 생성
                     return (
                         <ExpenseItem
                             expense={expense}
@@ -18,6 +19,7 @@ const ExpenseList = ({ handleDelete, expenses, handleEdit, clearItems }) => {
                     )
                 })}
             </ul>
+            {/* 항목의 길이가 1 이상일떄 항목 삭제 버튼 생성 */}
             {expenses.length > 0 && (
                 <button className='btn' onClick={clearItems}>
                     목록 지우기
