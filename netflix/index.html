@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~넷플릭스~</title>
+
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- 위에 메뉴바 -->
+    <header class="header">
+        <nav class="header__content">
+            <div class="header__logo">
+                <!-- 로고 -->
+                <img class="logo" src="assets/Netflix-logo.png" alt="Netflix">
+                <!-- 메뉴바 -->
+                <nav class="header__menu header__menu-unfold">
+                    <div>홈</div>
+                    <div>시리즈</div>
+                    <div>영화</div>
+                    <div>내가 찜한 리스트</div>
+                </nav>
+                <nav class="header__menu header__menu-fold">
+                    <div>메뉴</div>
+                    <img class="header__menu__menu-fold__button" src="assets/triangle.svg" alt="">
+                    <!-- 드랍다운메뉴 -->
+                    <div class="header__menu__menu-fold__button__button">
+                        <button>홈</button>
+                        <button>시리즈</button>
+                        <button>영화</button>
+                        <button>내가 찜한 리스트</button>
+                    </div>
+                </nav>
+            </div>
+            <!-- 프로필 -->
+            <div class="header__profile">
+                <img class="profile" src="assets/netflix-profile.png" alt="">
+            </div>
+        </nav>
+    </header>
+    <!-- 그 아래 메인 -->
+    <main class="main-container">
+        <!-- 위에 크게 뜨는 영화 정보 -->
+        <section class="movie-info-container">
+            <img class="movie-info-container__poster" src="assets/big-poster.png" alt="">
+            <div class="movie-info-container__text-container">
+                <div class="movie-info-container__title">영화 제목</div>
+                <button class="movie-info-container__play">재생</button>
+                <button class="movie-info-container__detail-info">상세 정보</button>
+                <div class="movie-info-container__description">영화 설명 어쩌구 저쩌구</div>
+            </div>
+        </section>
+        <!-- 영화 목록 -->
+        <section class="movies-container">
+            <div class="movies-container__movie-lists">
+                <!-- <div class="movies-container__movie-lists__list-title">영화 목록1</div> -->
+                <div class="movies-container__movie-lists__movie-list">
+                    지금 뜨는 콘텐츠
+                    <div class="movies">
+                        <img class="movie" src="assets/movie-poster1.png" alt="">
+                        <img class="movie" src="assets/movie-poster1.png" alt="">
+                        <img class="movie" src="assets/movie-poster1.png" alt="">
+                        <img class="movie" src="assets/movie-poster1.png" alt="">
+                        <img class="movie" src="assets/movie-poster1.png" alt="">
+                        <img class="movie" src="assets/movie-poster1.png" alt="">
+                        <img class="movie" src="assets/movie-poster1.png" alt="">
+                        <img class="movie" src="assets/movie-poster1.png" alt="">
+                        <img class="movie" src="assets/movie-poster1.png" alt="">
+                    </div>
+                </div>
+                <div class="movies-container__movie-lists__movie-list">
+                    최다 검색
+                    <div class="movies">
+                        <img class="movie" src="assets/movie-poster1.png" alt="">
+                        <img class="movie" src="assets/movie-poster1.png" alt="">
+                        <img class="movie" src="assets/movie-poster1.png" alt="">
+                        <img class="movie" src="assets/movie-poster1.png" alt="">
+                        <img class="movie" src="assets/movie-poster1.png" alt="">
+                        <img class="movie" src="assets/movie-poster1.png" alt="">
+                        <img class="movie" src="assets/movie-poster1.png" alt="">
+                        <img class="movie" src="assets/movie-poster1.png" alt="">
+                        <img class="movie" src="assets/movie-poster1.png" alt="">
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>
